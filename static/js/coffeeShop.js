@@ -38,3 +38,12 @@ const setProgressAndStatus = (progressVal, statusMsg) => {
 //
 // Add your event handlers below.
 //
+$('.add-to-order').on('click', (env) => {
+  addItemToCart(env.target.name);
+  incrementCartTotal(Number(env.target.value));
+})
+
+$('#place-order').on('click', () => {
+  incrementCoffeeSold($('#cart-items').children().length);
+  resetCart();
+})
